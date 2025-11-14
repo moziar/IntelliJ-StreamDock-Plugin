@@ -1,4 +1,10 @@
 # IntelliJ StreamDock Plugin
+[![GitHub Release](https://img.shields.io/github/v/release/moziar/IntelliJ-StreamDock-Plugin?label=Release)](https://github.com/moziar/IntelliJ-StreamDock-Plugin/releases/latest)
+[![Mirabox Space](https://img.shields.io/badge/Mirabox_Space-Download-%230088f8)](https://space.key123.vip/product?id=20251109001337)
+[![Total Downloads](https://img.shields.io/github/downloads/moziar/intellij-streamdock-plugin/total?label=Total%20Downloads)](https://github.com/moziar/IntelliJ-StreamDock-Plugin/releases)
+[![Latest Downloads](https://img.shields.io/github/downloads/moziar/IntelliJ-StreamDock-Plugin/latest/total?label=Latest%20Downloads)](https://github.com/moziar/IntelliJ-StreamDock-Plugin/releases/latest)
+[![Last Commit](https://img.shields.io/github/last-commit/moziar/IntelliJ-StreamDock-Plugin?label=Last%20Commit)](https://github.com/moziar/IntelliJ-StreamDock-Plugin/commits/main)
+
 An IntelliJ StreamDock Plugin baesed on the official Elgato StreamDeck plugin.
 
 ## Upstream
