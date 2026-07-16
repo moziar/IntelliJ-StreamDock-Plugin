@@ -87,6 +87,9 @@ class DefaultAction extends streamdeck_typescript_1.StreamDeckAction {
                 password = settings.password;
                 port = settings.port;
             }
+            if (payload.settings.port) {
+                port = payload.settings.port;
+            }
             let endpoint = `/api/action/${action}`;
             if (runConfig == null || runConfig === undefined) {
                 runConfig = '';
@@ -108,44 +111,14 @@ class DefaultAction extends streamdeck_typescript_1.StreamDeckAction {
     onContextAppear({ context, payload }) {
         console.log('onContextAppear() actionId=' + this.actionId() + " context=" + context);
         this.context = context;
-        this.readCustomActionTitle(payload.settings);
-        this.toggleTitleVisible();
-    }
-    readCustomActionTitle(settings) {
-        let actionTitle = settings.action;
-        if (actionTitle == null || actionTitle === '') {
-            actionTitle = this.actionTitle();
-        }
-        if (actionTitle == null || actionTitle === '') {
-            actionTitle = this.actionId();
-        }
-        this.customTitle = actionTitle;
-    }
-    toggleTitleVisible() {
-        if (this.showTitle !== "on" && this.context != undefined) {
-            this.plugin.setTitle("", this.context);
-        }
-        else if (this.context != undefined) {
-            if (this.customTitle == null || this.customTitle === '') {
-                this.plugin.setTitle("", this.context);
-                return;
-            }
-            else {
-                this.plugin.setTitle(this.customTitle, this.context);
-            }
-        }
     }
     onContextDisappear(event) {
     }
     onSendToPluginEvent({ context, payload }) {
-        console.log('onSendToPluginEvent() payload.showTitle=' + payload.showTitle);
+        console.log('onSendToPluginEvent()');
     }
     onSettings({ context, payload: { settings } }) {
         console.log('onSettings() settings.action=' + settings.action);
-        console.log('onSettings() settings.showTitle=' + settings.showTitle);
-        this.showTitle = settings.showTitle;
-        this.readCustomActionTitle(settings);
-        this.toggleTitleVisible();
     }
     onReceiveGlobalSettings({ payload: { settings } }) {
     }

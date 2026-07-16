@@ -24,12 +24,8 @@ class IdeaPI extends streamdeck_typescript_1.StreamDeckPropertyInspectorHandler 
         super();
     }
     onDocumentLoaded() {
-        var _a, _b;
         this.logMessage('onDocumentLoaded() ' + this.actionInfo.action);
         const runConfig = document.getElementById('run_config');
-        this.initElements();
-        (_a = this.saveElement) === null || _a === void 0 ? void 0 : _a.addEventListener('click', this.onSaveButtonPressed.bind(this));
-        (_b = this.showTitleElement) === null || _b === void 0 ? void 0 : _b.addEventListener('change', this.onUpdateTitleButtonPressed.bind(this));
         switch (this.actionInfo.action) {
             case pluginName + '.run':
             case pluginName + '.debug': {
@@ -50,53 +46,41 @@ class IdeaPI extends streamdeck_typescript_1.StreamDeckPropertyInspectorHandler 
         });
     }
     documentLoaded() {
-        this.initElements();
     }
     initElements() {
         this.hostElement = document.getElementById('host');
         this.portElement = document.getElementById('port');
         this.passwordElement = document.getElementById('password');
         this.actionElement = document.getElementById('action');
-        this.saveElement = document.getElementById('save');
-        this.showTitleElement = document.getElementById('singlechk');
         this.runConfigurationNameElement = document.getElementById('run_config_name');
+        this.actionPortElement = document.getElementById('action_port');
     }
-    onSaveButtonPressed() {
-        var _a, _b, _c;
-        return __awaiter(this, void 0, void 0, function* () {
-            this.logMessage('onValidateButtonPressed()');
-            const password = (_a = document.getElementById('password')) === null || _a === void 0 ? void 0 : _a.value;
-            const host = (_b = this.hostElement) === null || _b === void 0 ? void 0 : _b.value;
-            const port = (_c = this.portElement) === null || _c === void 0 ? void 0 : _c.value;
-            const action = this.actionElement.value;
-            const runConfig = this.runConfigurationNameElement.value;
-            const showTitle = this.showTitleElement.checked ? "on" : "off";
-            this.logMessage("action=" + action + ", showTitle=" + showTitle);
-            this.settingsManager.setGlobalSettings({ password, host, port });
-            switch (this.actionInfo.action) {
-                case pluginName + '.empty.action': {
-                    break;
-                }
-            }
-            this.setSettings({
-                action: action,
-                showTitle,
-                runConfig
-            });
-            this.requestSettings();
+    saveAllSettings() {
+        var _a, _b, _c, _d, _e, _f, _g, _h;
+        const password = (_a = this.passwordElement) === null || _a === void 0 ? void 0 : _a.value;
+        const host = (_b = this.hostElement) === null || _b === void 0 ? void 0 : _b.value;
+        const port = (_c = this.portElement) === null || _c === void 0 ? void 0 : _c.value;
+        this.settingsManager.setGlobalSettings({ password, host, port });
+        this.setSettings({
+            action: (_e = (_d = this.actionElement) === null || _d === void 0 ? void 0 : _d.value) !== null && _e !== void 0 ? _e : "",
+            runConfig: (_g = (_f = this.runConfigurationNameElement) === null || _f === void 0 ? void 0 : _f.value) !== null && _g !== void 0 ? _g : "",
+            port: this.actionPortElement ? (this.actionPortElement.value !== null && this.actionPortElement.value !== void 0 ? this.actionPortElement.value : "") : ""
         });
     }
-    onUpdateTitleButtonPressed() {
-        return __awaiter(this, void 0, void 0, function* () {
-            this.logMessage('onUpdateTitleButtonPressed()');
-            const showTitle = this.showTitleElement.checked ? "on" : "off";
-            this.setSettings({
-                showTitle
-            });
-        });
+    registerAutoSave() {
+        [
+            this.hostElement,
+            this.portElement,
+            this.passwordElement,
+            this.actionElement,
+            this.runConfigurationNameElement,
+            this.actionPortElement
+        ].forEach(el => el === null || el === void 0 ? void 0 : el.addEventListener('input', () => this.saveAllSettings()));
     }
     propertyInspectorDidAppear() {
         this.logMessage('propertyInspectorDidAppear()');
+        this.initElements();
+        this.registerAutoSave();
         this.requestSettings();
         const globalSettings = this.settingsManager.getGlobalSettings();
         if ((0, utils_1.isGlobalSettingsSet)(globalSettings)) {
@@ -115,18 +99,18 @@ class IdeaPI extends streamdeck_typescript_1.StreamDeckPropertyInspectorHandler 
         }
     }
     onReceiveSettings({ payload, }) {
-        var _a, _b;
+        var _a, _b, _c;
         this.logMessage("onReceiveSettings()");
         this.logMessage("payload.settings=" + JSON.stringify(payload.settings));
         this.logMessage("this.actionElement=" + this.actionElement);
         if (this.actionElement) {
             this.actionElement.value = (_a = payload.settings.action) !== null && _a !== void 0 ? _a : "";
         }
-        if (this.showTitleElement) {
-            this.showTitleElement.checked = ((_b = payload.settings.showTitle) !== null && _b !== void 0 ? _b : "off") === "on";
-        }
         if (this.runConfigurationNameElement) {
-            this.runConfigurationNameElement.value = payload.settings.runConfig !== undefined ? payload.settings.runConfig : "";
+            this.runConfigurationNameElement.value = (_b = payload.settings.runConfig) !== null && _b !== void 0 ? _b : "";
+        }
+        if (this.actionPortElement) {
+            this.actionPortElement.value = (_c = payload.settings.port) !== null && _c !== void 0 ? _c : "";
         }
     }
 }

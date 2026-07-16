@@ -29,7 +29,8 @@
       "Name": "Open Action Browser",
       "States": [
         {
-          "Image": "icons/web@72x72_dark"
+          "Image": "icons/web@72x72_dark",
+          "Title": "Action\n Browser"
         }
       ],
       "Tooltip": "Browse and copy action ID in IDE",
@@ -53,7 +54,8 @@
       "Name": "Update Project",
       "States": [
         {
-          "Image": "icons/update@20x20_dark"
+          "Image": "icons/update@20x20_dark",
+          "Title": "VCS\nUpdate"
         }
       ],
       "Tooltip": "Update Project",
@@ -65,7 +67,8 @@
       "Name": "New Project",
       "States": [
         {
-          "Image": "icons/createNewProjectTab"
+          "Image": "icons/createNewProjectTab",
+          "Title": "New\nProject"
         }
       ],
       "Tooltip": "New Project",
@@ -77,7 +80,8 @@
       "Name": "Run",
       "States": [
         {
-          "Image": "icons/run_dark"
+          "Image": "icons/run_dark",
+          "Title": "Run"
         }
       ],
       "Tooltip": "Run",
@@ -89,7 +93,8 @@
       "Name": "Debug",
       "States": [
         {
-          "Image": "icons/debug_dark"
+          "Image": "icons/debug_dark",
+          "Title": "Debug"
         }
       ],
       "Tooltip": "Debug",
@@ -102,7 +107,8 @@
       "SupportedInMultiActions": true,
       "States": [
         {
-          "Image": "icons/stepOver_dark"
+          "Image": "icons/stepOver_dark",
+          "Title": "Step\nOver"
         }
       ],
       "Tooltip": "Step Over",
@@ -114,7 +120,8 @@
       "SupportedInMultiActions": true,
       "States": [
         {
-          "Image": "icons/stepInto_dark"
+          "Image": "icons/stepInto_dark",
+          "Title": "Step\nInto"
         }
       ],
       "Tooltip": "Step Into",
@@ -126,7 +133,8 @@
       "SupportedInMultiActions": true,
       "States": [
         {
-          "Image": "icons/stepOut_dark"
+          "Image": "icons/stepOut_dark",
+          "Title": "Step\nOut"
         }
       ],
       "UUID": "com.jetbrains.idea.action.step.out"
@@ -136,7 +144,8 @@
       "Name": "Resume",
       "States": [
         {
-          "Image": "icons/resume_dark"
+          "Image": "icons/resume_dark",
+          "Title": "Resume"
         }
       ],
       "Tooltip": "Resume",
@@ -148,7 +157,8 @@
       "Name": "Pause",
       "States": [
         {
-          "Image": "icons/pause_dark"
+          "Image": "icons/pause_dark",
+          "Title": "Pause"
         }
       ],
       "Tooltip": "Pause",
@@ -160,7 +170,8 @@
       "Name": "Search Everywhere",
       "States": [
         {
-          "Image": "icons/find_dark"
+          "Image": "icons/find_dark",
+          "Title": "Search\nEverywhere"
         }
       ],
       "SupportedInMultiActions": true,
@@ -171,7 +182,8 @@
       "Name": "Stop",
       "States": [
         {
-          "Image": "icons/stop_dark"
+          "Image": "icons/stop_dark",
+          "Title": "Stop"
         }
       ],
       "SupportedInMultiActions": true,
@@ -182,7 +194,8 @@
       "Name": "Project Structure",
       "States": [
         {
-          "Image": "icons/projectStructure_dark"
+          "Image": "icons/projectStructure_dark",
+          "Title": "Project\nStructure"
         }
       ],
       "SupportedInMultiActions": true,
@@ -193,7 +206,8 @@
       "Name": "Reset Frame",
       "States": [
         {
-          "Image": "icons/popFrame_dark"
+          "Image": "icons/popFrame_dark",
+          "Title": "Reset\nFrame"
         }
       ],
       "Tooltip": "Reset Frame",
