@@ -357,6 +357,7 @@ const project_structure_action_1 = require("./actions/project-structure-action")
 const empty_action_1 = require("./actions/empty-action");
 const action_id_browser_action_1 = require("./actions/action-id-browser-action");
 const step_into_action_1 = require("./actions/step-into-action");
+const pop_frame_action_1 = require("./actions/pop-frame-action");
 class IdeaPlugin extends streamdeck_typescript_1.StreamDeckPluginHandler {
     constructor() {
         super();
@@ -374,12 +375,13 @@ class IdeaPlugin extends streamdeck_typescript_1.StreamDeckPluginHandler {
         new project_structure_action_1.ShowProjectStructureAction(this, 'com.jetbrains.idea.action.show.project.structure');
         new empty_action_1.EmptyAction(this, 'com.jetbrains.idea.empty.action');
         new action_id_browser_action_1.ActionIdBrowserAction(this, 'com.jetbrains.idea.action.browser');
+        new pop_frame_action_1.PopFrameAction(this, 'com.jetbrains.idea.action.pop.frame');
     }
 }
 exports.IdeaPlugin = IdeaPlugin;
 new IdeaPlugin();
 
-},{"./actions/action-id-browser-action":1,"./actions/debug-action":2,"./actions/empty-action":4,"./actions/git-pull-action":5,"./actions/newProject":6,"./actions/pause-action":7,"./actions/project-structure-action":8,"./actions/resume-action":9,"./actions/run-action":10,"./actions/search-everywhere-action":11,"./actions/step-into-action":12,"./actions/step-out-action":13,"./actions/step-over-action":14,"./actions/stop-action":15,"streamdeck-typescript":28}],17:[function(require,module,exports){
+},{"./actions/action-id-browser-action":1,"./actions/debug-action":2,"./actions/empty-action":4,"./actions/git-pull-action":5,"./actions/newProject":6,"./actions/pause-action":7,"./actions/project-structure-action":8,"./actions/resume-action":9,"./actions/run-action":10,"./actions/search-everywhere-action":11,"./actions/step-into-action":12,"./actions/step-out-action":13,"./actions/step-over-action":14,"./actions/stop-action":15,"./actions/pop-frame-action":34,"streamdeck-typescript":28}],17:[function(require,module,exports){
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -1233,4 +1235,18 @@ class SettingsManager {
 }
 exports.SettingsManager = SettingsManager;
 
-},{}]},{},[16]);
+},{}],34:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PopFrameAction = void 0;
+const default_action_1 = require("./default-action");
+class PopFrameAction extends default_action_1.DefaultAction {
+    actionId() {
+        return "Debugger.PopFrame";
+    }
+    actionTitle() {
+        return "Reset\nFrame";
+    }
+}
+exports.PopFrameAction = PopFrameAction;
+},{"./default-action":3}]},{},[16]);

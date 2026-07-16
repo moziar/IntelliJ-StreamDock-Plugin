@@ -9,7 +9,7 @@
   "Name": "JetBrains IDE",
   "Icon": "icons/idea",
   "URL": "https://github.com/JetBrains/intellij-streamdeck-plugin",
-  "Version": "1.0.5",
+  "Version": "1.0.6.1",
   "OS": [
     {
       "Platform": "mac",
@@ -187,6 +187,18 @@
       ],
       "SupportedInMultiActions": true,
       "UUID": "com.jetbrains.idea.action.show.project.structure"
+    },
+    {
+      "Icon": "icons/actions/popFrame_dark",
+      "Name": "Reset Frame",
+      "States": [
+        {
+          "Image": "icons/popFrame_dark"
+        }
+      ],
+      "Tooltip": "Reset Frame",
+      "SupportedInMultiActions": true,
+      "UUID": "com.jetbrains.idea.action.pop.frame"
     }
   ]
 
