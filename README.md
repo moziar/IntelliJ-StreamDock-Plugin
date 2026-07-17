@@ -12,6 +12,15 @@ See [JetBrains/intellij-streamdeck-plugin](https://github.com/JetBrains/intellij
 
 See [README](https://github.com/JetBrains/intellij-streamdeck-plugin?tab=readme-ov-file) file for usage.
 
+## Installation
+### 1. Download from MiraBox Space
+1. Download IntelliJ StreamDock Plugin directly from [MiraBox Space](https://space.key123.vip/product/20251109001337).
+2. Click `Open Software` to install it.
+
+### 2. Manual Installation
+1. Download the `.sdPlugin` file from the [release](https://github.com/moziar/IntelliJ-StreamDock-Plugin/releases) page.
+2. Double click it to install.
+
 ## Version
 All the version is as the same as the upstream plugin.
 
