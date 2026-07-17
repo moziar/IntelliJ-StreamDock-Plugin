@@ -1,6 +1,6 @@
 {
   "SDKVersion": 2,
-  "Author": "Jacky Liu",
+  "Author": "Moz",
   "Category": "JetBrains IDE",
   "CategoryIcon": "icons/category/idea",
   "CodePath": "public/plugin.html",
@@ -8,7 +8,7 @@
   "Description": "Enables Stream Deck integration with JetBrains IDEs such as IDEA, Rider, WebStorm, Android Studio etc. This plugin requires JetBrains IDE plugin Stream Deck installed.",
   "Name": "JetBrains IDE",
   "Icon": "icons/idea",
-  "URL": "https://github.com/JetBrains/intellij-streamdeck-plugin",
+  "URL": "https://github.com/moziar/IntelliJ-StreamDock-Plugin",
   "Version": "1.0.6.1",
   "OS": [
     {
